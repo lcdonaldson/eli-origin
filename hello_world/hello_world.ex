@@ -1,7 +1,8 @@
-defmodule Start do
-  def first(a, b) do
-    a + b
+defmodule Hello do
+  def world(a, b) do
+    {a, b}
   end
 end
 
-IO.puts Start.first(3, 5)
+{a, b} = Hello.world("hello", "world")
+IO.puts "#{a} #{b}"
