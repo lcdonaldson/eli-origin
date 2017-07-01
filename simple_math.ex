@@ -21,3 +21,11 @@ defmodule Number do
 end
 
 IO.inspect Number.mul(5, 2) // should give you 10
+
+defmodule Number do
+  def div(a, b) do
+    a / b
+  end
+end
+
+IO.inspect Number.div(5, 2) // should give you 2.5
