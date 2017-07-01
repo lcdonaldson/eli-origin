@@ -13,3 +13,11 @@ defmodule Number do
 end
 
 IO.inspect Number.sub(5, 2) // should give you 3
+
+defmodule Number do
+  def mul(a, b) do
+    a * b
+  end
+end
+
+IO.inspect Number.mul(5, 2) // should give you 10
