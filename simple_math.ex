@@ -29,3 +29,11 @@ defmodule Number do
 end
 
 IO.inspect Number.div(5, 2) // should give you 2.5
+
+defmodule Number do
+  def pow(a, b) do
+    :math.pow(a,b) |> round
+  end
+end
+
+IO.inspect Number.pow(5, 2) // should give you 25
