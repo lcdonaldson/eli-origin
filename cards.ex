@@ -1,8 +1,8 @@
 defmodule Cards do
   def new_deck do
-    card = [
+    cards = [
             "Ace", "Two", "Three", 
-            "Four", "Five", "Six,
+            "Four", "Five", "Six",
             "Seven", "Eight", "Nine",
             "Ten", "Jack", "Queen", 
             "King"
