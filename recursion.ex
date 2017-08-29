@@ -1,9 +1,11 @@
-defmodule Test do
-  def printList(['a' | 'b', 'c'])
-    IO.puts 'a'
-    printList(['b', 'c'])
+defmodule Account do
+  def printList([head | tail]) do
+    IO.puts head
+    printList(tail)
   end
   
-  def printList([])
+  def printList([]) do
   end
 end
+
+IO.puts Account.printList(["elixir", "javascript", "ruby"])
