@@ -12,3 +12,23 @@ def load(filename) do
     :error -> "that file does not exist"  
   end
 end
+
+defmodule Account do
+
+  def getBalance(amount, balance, :deposit) do
+    amount + balance
+  end
+
+  def getBalance(amount, balance, :withdrawl) do
+    amount - balance
+  end
+
+end
+
+IO.puts Account.getBalance(4000, 1700, :deposit)
+IO.puts Account.getBalance(4000, 1700, :withdrawl)
+
+  
+
+
+
