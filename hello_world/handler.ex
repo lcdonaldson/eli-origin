@@ -6,7 +6,13 @@ defmodule Handler do
   def parse(request) do
     # Convert String into a map
     
-    conv = %{method: "GET", path: "/profile", response_body: "" }
+    conv = %{ method: "GET", path: "/profile", response_body: "" }
+  end
+  
+  def route(conv) do
+    # New map that has response body filled.
+    
+    conv = %{ method: "GET", path: "/profile", response_body: "name, age, gender" }
   end
 
 end
