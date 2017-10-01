@@ -35,3 +35,7 @@ request = """
     User-Agent: ExampleBrowser/1.0
     Accept: */*
     """
+    
+response = Handler.handle(request)
+
+IO.puts response
