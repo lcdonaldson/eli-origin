@@ -1,6 +1,10 @@
 defmodule Handler do
 
   def handle(request) do
+    request
+    |> parse
+    |> route
+    |> responseFormat
   end
   
   def parse(request) do
