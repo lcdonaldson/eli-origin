@@ -9,8 +9,13 @@ defmodule Handler do
   
   def parse(request) do
     # Convert String into a map
-    
-    conv = %{ method: "GET", path: "/profile", response_body: "" }
+    firstLine = 
+    [method, path, _] = 
+      request 
+        |> String.split("\n") 
+        |> List.first
+        String.split(" ")
+    %{ method: "GET", path: "/profile", response_body: "" }
   end
   
   def route(conv) do
