@@ -14,8 +14,8 @@ defmodule Handler do
       request 
         |> String.split("\n") 
         |> List.first
-        String.split(" ")
-    %{ method: "GET", path: "/profile", response_body: "" }
+        |> String.split(" ")
+    %{ method: "GET", path: "/profile", response_body: " " }
   end
   
   def route(conv) do
