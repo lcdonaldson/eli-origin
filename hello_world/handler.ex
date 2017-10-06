@@ -30,9 +30,9 @@ defmodule Handler do
     """
     HTTP/1.1 200 OK
     Content-Type: text/html
-    Content-Length: 30
+    Content-Length: #{String.length(conv.resp_body)}
     
-    name, age, gender
+    #{conv.resp_body}
     """
   end
 
