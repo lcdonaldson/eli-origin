@@ -27,16 +27,16 @@ defmodule Servy.Handler do
     route(conv, conv.method, conv.path)
   end
 
-  def route(conv, "GET", "/wildthings") do
-    %{ conv | status: 200, resp_body: "Bears, Lions, Tigers" }          
+  def route(conv, "GET", "/archery") do
+    %{ conv | status: 200, resp_body: "Longbows, Lions, Tigers" }          
   end
 
-  def route(conv, "GET", "/bears") do
-    %{ conv | status: 200, resp_body: "Teddy, Smokey, Paddington" }    
+  def route(conv, "GET", "/longbows") do
+    %{ conv | status: 200, resp_body: "Martin, Howard Hill, Bear" }    
   end
 
-  def route(conv, "GET", "/bears/" <> id) do
-    %{ conv | status: 200, resp_body: "Bear #{id}" }
+  def route(conv, "GET", "/longbows/" <> id) do
+    %{ conv | status: 200, resp_body: "Longbow #{id}" }
   end
 
   def route(conv, _method, path) do
@@ -67,7 +67,7 @@ defmodule Servy.Handler do
 end
 
 request = """
-GET /wildthings HTTP/1.1
+GET /archery HTTP/1.1
 Host: example.com
 User-Agent: ExampleBrowser/1.0
 Accept: */*
@@ -79,7 +79,7 @@ response = Servy.Handler.handle(request)
 IO.puts response
 
 request = """
-GET /bears HTTP/1.1
+GET /longbows HTTP/1.1
 Host: example.com
 User-Agent: ExampleBrowser/1.0
 Accept: */*
@@ -103,7 +103,7 @@ response = Servy.Handler.handle(request)
 IO.puts response
 
 request = """
-GET /bears/1 HTTP/1.1
+GET /longbows/1 HTTP/1.1
 Host: example.com
 User-Agent: ExampleBrowser/1.0
 Accept: */*
