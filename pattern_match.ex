@@ -13,28 +13,7 @@ def load(filename) do
   end
 end
 
-defmodule Account do
 
-  def balance(transactions, options) do 
-    currency = options[:currency]
-    symbol = options[:symbol]
-
-    balance = calculateBalance(transactions, symbol)
-    "Balance in #{currency}: #{symbol}#{balance}"
-  end
-
-  def runTransaction(amount, balance, :deposit) do
-    amount + balance
-  end
-
-  def runTransaction(amount, balance, :withdrawl) do
-    amount - balance
-  end
-
-end
-
-IO.puts Account.runTransaction(4000, 1700, :deposit)
-IO.puts Account.runTransaction(4000, 1700, :withdrawl)
 
   
 
