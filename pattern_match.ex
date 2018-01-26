@@ -15,18 +15,26 @@ end
 
 defmodule Account do
 
-  def getBalance(amount, balance, :deposit) do
+  def balance(transactions, options) do 
+    currency = options[:currency]
+    symbol = options[:symbol]
+
+    balance = calculateBalance(transactions, symbol)
+    "Balance in #{currency}: #{symbol}#{balance}"
+  end
+
+  def runTransaction(amount, balance, :deposit) do
     amount + balance
   end
 
-  def getBalance(amount, balance, :withdrawl) do
+  def runTransaction(amount, balance, :withdrawl) do
     amount - balance
   end
 
 end
 
-IO.puts Account.getBalance(4000, 1700, :deposit)
-IO.puts Account.getBalance(4000, 1700, :withdrawl)
+IO.puts Account.runTransaction(4000, 1700, :deposit)
+IO.puts Account.runTransaction(4000, 1700, :withdrawl)
 
   
 
